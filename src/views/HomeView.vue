@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Enter from '@/components/Animations/Enter.vue'
 import Dither from '@/components/Dither.vue'
 </script>
 <template>
@@ -12,6 +13,11 @@ import Dither from '@/components/Dither.vue'
     :disable-animation="false"
     :enable-mouse-interaction="true"
     :mouse-radius="1"
+    class="-z-10"
   />
-  <main>HOME</main>
+  <main class="text-white flex justify-center">
+    <Enter>
+      <h1 class="font-extrabold text-3xl">Hey, I'm Aissam-Salman, Full stack-developer</h1>
+    </Enter>
+  </main>
 </template>

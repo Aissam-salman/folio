@@ -1,5 +1,5 @@
 <template>
-  <div ref="containerRef" class="w-full h-full absolute top-0 left-0 -z-10" />
+  <div ref="containerRef" class="w-screen h-screen absolute top-0 left-0 -z-10" />
 </template>
 
 <script setup lang="ts">
