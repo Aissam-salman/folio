@@ -3,6 +3,7 @@ import Enter from '@/components/Animations/Enter.vue'
 import Dither from '@/components/Dither.vue'
 import Github from '@/components/Icon/Github.vue'
 import Linkedin from '@/components/Icon/Linkedin.vue'
+import Projects from '@/components/Projects.vue'
 </script>
 <template>
   <Dither :wave-speed="0.025" :wave-frequency="5" :wave-amplitude="0.1" :wave-color="[0.9, 0.2, 0.9]" :color-num="12"
@@ -25,7 +26,11 @@ import Linkedin from '@/components/Icon/Linkedin.vue'
           </a>
         </div>
         <section>
-          <Projects />
+          Dernier projets:
+          <div>
+
+            <Projects />
+          </div>
         </section>
       </div>
     </Enter>
