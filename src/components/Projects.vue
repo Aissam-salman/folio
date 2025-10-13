@@ -21,7 +21,7 @@ onMounted(() => {
 })
 </script>
 <template>
-    <div class="grid grid-cols-2">
+    <div class="grid grid-cols-2 gap-3">
         <div v-for="proj in projects" :key="proj.id">
             <Suspense>
                 <ProjectCard :project="proj" :key="proj.id" />

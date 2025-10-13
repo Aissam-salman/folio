@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import Navbar from './components/Navbar.vue'
 </script>
 
 <template>
-  <Navbar />
-  <RouterView />
+  <div class="bg-black text-white min-h-screen">
+    <RouterView />
+  </div>
 </template>
