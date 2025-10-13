@@ -8,7 +8,7 @@ import Projects from '@/components/Projects.vue'
 </script>
 
 <template>
-  <main class="text-white p-5 relative z-0">
+  <main class="text-white px-5 relative z-0">
     <Navbar />
     <Dither
       :wave-speed="0.025"

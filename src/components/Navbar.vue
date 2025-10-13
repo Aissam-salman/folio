@@ -8,7 +8,6 @@ const isActive = (path: string) => route.path === path
 
 <template>
   <div class="flex justify-center p-5">
-    <Enter>
       <header class="w-fit border border-gray-600/30 rounded-lg backdrop-blur-sm bg-white/5">
         <nav class="py-2 px-10 flex items-center gap-10">
           <RouterLink
@@ -31,6 +30,5 @@ const isActive = (path: string) => route.path === path
           </RouterLink>
         </nav>
       </header>
-    </Enter>
   </div>
 </template>
