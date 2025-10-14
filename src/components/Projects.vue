@@ -14,7 +14,7 @@ async function getProjects() {
         return;
     }
     console.log('Données récupérées :', data);
-    projects.value = data;
+    projects.value = data.slice(0,2);
 }
 onMounted(() => {
     getProjects();
