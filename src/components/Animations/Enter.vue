@@ -4,9 +4,20 @@ import { Motion } from 'motion-v'
 
 <template>
   <Motion
-    :transition="{ duration: 0.4, scale: { type: 'spring', visualDuration: 0.8, bounce: 0.2 } }"
-    :initial="{ opacity: 0, scale: 0 }"
-    :animate="{ opacity: 1, scale: 1 }"
+       :initial="{
+          scale: 1.1,
+          opacity: 0,
+          filter: 'blur(20px)'
+        }"
+        :animate="{
+          scale: 1,
+          opacity: 1,
+          filter: 'blur(0px)'
+        }"
+        :transition="{
+          duration: 0.6,
+          delay: 0.1
+        }"
     as-child
   >
     <slot />

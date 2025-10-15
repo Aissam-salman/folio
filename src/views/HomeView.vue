@@ -8,20 +8,8 @@ import Projects from '@/components/Projects.vue'
 </script>
 
 <template>
-  <main class="text-white px-5 relative z-0">
+  <main class="text-white relative z-0 w-full max-w-[56rem] mx-auto px-4 sm:px-6 lg:px-8 sm:border-x border-gray-600/30  pt-10">
     <Navbar />
-    <Dither
-      :wave-speed="0.025"
-      :wave-frequency="5"
-      :wave-amplitude="0.1"
-      :wave-color="[0.9, 0.2, 0.9]"
-      :color-num="12"
-      :pixel-size="2"
-      :disable-animation="false"
-      :enable-mouse-interaction="true"
-      :mouse-radius="1"
-      class=""
-    />
     <Enter>
       <div class="flex flex-col gap-3 items-center">
         <div class="text-center mt-5">
