@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Enter from '@/components/Animations/Enter.vue'
-import Dither from '@/components/Dither.vue'
 import Github from '@/components/Icon/Github.vue'
 import Linkedin from '@/components/Icon/Linkedin.vue'
 import Navbar from '@/components/Navbar.vue'
