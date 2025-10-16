@@ -7,7 +7,7 @@ import Button from '@/components/Button.vue';
 import { ToastAction, ToastDescription, ToastProvider, ToastRoot, ToastTitle, ToastViewport } from 'radix-vue'
 
 const open = ref(false);
-const projects = ref([]);
+const projects = ref<any[]>([]);
 async function getProjects() {
   const { data, error } = await supabase.from('projects').select('*');
   if (error) {
@@ -15,7 +15,7 @@ async function getProjects() {
     return;
   }
   console.log('Données récupérées :', data);
-  projects.value = data.slice(0, 2);
+  projects.value = (data ?? []).slice(0, 2);
 }
 
 onMounted(() => {

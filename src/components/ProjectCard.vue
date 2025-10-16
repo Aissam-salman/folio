@@ -1,7 +1,13 @@
 <script lang="ts" setup>
-defineProps({
-  project: Object,
-})
+interface Project {
+  link: string
+  title: string
+  date?: string
+  description?: string
+  tech?: string[]
+}
+
+const { project } = defineProps<{ project: Project }>()
 </script>
 <template>
   <a :href="project.link" target="_blank">
