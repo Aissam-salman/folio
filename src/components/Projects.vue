@@ -1,31 +1,14 @@
 <script lang="ts" setup>
-import {
-    supabase
-} from '@/lib/connection';
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import ProjectCard from './ProjectCard.vue';
+import projectsData from '@/data/projects.json';
 
-const projects = ref();
-
-async function getProjects() {
-    const { data, error } = await supabase.from('projects').select('*');
-    if (error) {
-        console.error("Erreur fetch project from supabase", error);
-        return;
-    }
-    console.log('Données récupérées :', data);
-    projects.value = data.slice(0,2);
-}
-onMounted(() => {
-    getProjects();
-})
+const projects = ref(projectsData.slice(0, 2));
 </script>
 <template>
-    <div class="grid grid-cols-2 gap-3">
-        <div v-for="proj in projects" :key="proj.id">
-            <Suspense>
-                <ProjectCard :project="proj" :key="proj.id" />
-            </Suspense>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div v-for="proj in projects" :key="proj.id" class="transform transition-all duration-300 hover:scale-[1.02]">
+            <ProjectCard :project="proj" />
         </div>
     </div>
 </template>

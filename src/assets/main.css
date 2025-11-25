@@ -1,1 +1,50 @@
 @import 'tailwindcss';
+
+/* Animations personnalisées */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Scrollbar personnalisée - plus discrète */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #171717;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Amélioration des transitions globales */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Background animé pour le body - plus subtil */
+body {
+  background: linear-gradient(-45deg, #0a0a0a, #111111, #0d0d0d, #121212);
+  background-size: 400% 400%;
+  animation: gradient-shift 20s ease infinite;
+}

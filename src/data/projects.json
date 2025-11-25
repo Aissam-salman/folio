@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Wiico - Refonte complète",
+    "description": "Refonte totale du site vitrine avec blog, intégration API ATS, gestion de contenu moderne",
+    "date": "2025",
+    "tech": ["Next.js", "Strapi", "TypeScript", "API ATS"],
+    "link": "https://wiico.fr",
+    "image": "wiico.png"
+  },
+  {
+    "id": 2,
+    "title": "Minkey - Application Mobile",
+    "description": "Application mobile en cours de déploiement sur les stores iOS et Android",
+    "date": "2025",
+    "tech": ["FlutterFlow", "Flutter", "Firebase"],
+    "link": "https://minkey-app.flutterflow.app/",
+    "image": "create_account.png"
+  },
+  {
+    "id": 3,
+    "title": "Minkey - Site Vitrine",
+    "description": "Refonte complète du site vitrine sur WordPress avec design moderne",
+    "date": "2024",
+    "tech": ["WordPress", "PHP", "MySQL", "CSS"],
+    "link": "https://minkey.fr",
+    "image": "2.png"
+  },
+  {
+    "id": 4,
+    "title": "Portfolio Personnel",
+    "description": "Portfolio interactif avec Vue 3, TypeScript et animations modernes",
+    "date": "2024",
+    "tech": ["Vue 3", "TypeScript", "Tailwind CSS", "Vite"],
+    "link": "https://github.com/Aissam-salman/folio",
+    "image": "folio.png"
+  }
+]
