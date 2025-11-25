@@ -21,6 +21,10 @@ function copyEmail() {
   navigator.clipboard.writeText(email).then(() => {
     setTimeout(() => {
       open.value = true
+      // Fermer automatiquement après 3 secondes
+      setTimeout(() => {
+        open.value = false
+      }, 3000)
     }, 100)
   })
 }
@@ -110,27 +114,28 @@ function copyEmail() {
       </div>
       <ToastRoot
         v-model:open="open"
-        class="bg-white/20 rounded-md shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] p-[15px] grid [grid-template-areas:_'title_action'_'description_action'] grid-cols-[auto_max-content] gap-x-[15px] items-center data-[state=open]:animate-slideIn data-[state=closed]:animate-hide data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=cancel]:translate-x-0 data-[swipe=cancel]:transition-[transform_200ms_ease-out] data-[swipe=end]:animate-swipeOut"
+        class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 grid [grid-template-areas:'title_action'_'description_action'] grid-cols-[auto_max-content] gap-x-4 items-start data-[state=open]:animate-slideIn data-[state=closed]:animate-hide data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=cancel]:translate-x-0 data-[swipe=cancel]:transition-[transform_200ms_ease-out] data-[swipe=end]:animate-swipeOut"
       >
-        <ToastTitle class="[grid-area:_title] mb-[5px] font-medium text-slate12 text-[15px]">
-          Email copier avec success !
+        <ToastTitle class="[grid-area:title] font-light text-sm text-white tracking-tight">
+          Email copié avec succès
         </ToastTitle>
-        <ToastDescription as-child> aissam.lamjadab@gmail.com </ToastDescription>
-        <ToastAction class="[grid-area:_action]" as-child alt-text="Goto schedule to undo">
+        <ToastDescription class="[grid-area:description] text-xs text-gray-400 mt-1">
+          aissam.lamjadab@gmail.com
+        </ToastDescription>
+        <ToastAction class="[grid-area:action]" as-child alt-text="Fermer">
           <button
-            class="inline-flex items-center justify-center rounded font-medium text-xs px-[10px] leading-[25px] h-[25px] bg-green2 text-green11 shadow-[inset_0_0_0_1px] shadow-green7 hover:shadow-[inset_0_0_0_1px] hover:shadow-green8 focus:shadow-[0_0_0_2px] focus:shadow-green8"
+            class="inline-flex items-center justify-center rounded-md w-6 h-6 text-gray-400 hover:text-white hover:bg-white/5 transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="16"
+              height="16"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="currentColor"
+              stroke="white"
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="lucide lucide-x-icon lucide-x"
             >
               <path d="M18 6 6 18" />
               <path d="m6 6 12 12" />
@@ -139,7 +144,7 @@ function copyEmail() {
         </ToastAction>
       </ToastRoot>
       <ToastViewport
-        class="[--viewport-padding:_25px] fixed bottom-0 right-0 flex flex-col p-[var(--viewport-padding)] gap-[10px] w-[390px] max-w-[100vw] m-0 list-none z-[2147483647] outline-none"
+        class="[--viewport-padding:25px] fixed bottom-0 right-0 flex flex-col p-(--viewport-padding) gap-3 w-96 max-w-[100vw] m-0 list-none z-50 outline-none"
       />
     </div>
   </ToastProvider>
