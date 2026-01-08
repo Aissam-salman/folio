@@ -7,7 +7,7 @@ import Projects from '@/components/Projects.vue'
 </script>
 
 <template>
-  <main class="text-white relative z-0 w-full max-w-[56rem] mx-auto px-4 sm:px-6 lg:px-8 sm:border-x border-gray-600/30 pt-10 pb-20">
+  <main class="text-white relative z-0 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 sm:border-x border-gray-600/30 pt-10 pb-20">
     <Navbar />
     <Enter>
       <div class="flex flex-col gap-3 items-center">

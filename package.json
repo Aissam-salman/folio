@@ -16,7 +16,6 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.74.0",
     "@tailwindcss/vite": "^4.1.14",
     "@vercel/speed-insights": "^1.2.0",
     "motion-v": "^1.7.2",
