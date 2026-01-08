@@ -14,17 +14,20 @@ import {
 import projectsData from '@/data/projects.json'
 
 const open = ref(false)
+const emailCopied = ref(false)
 const projects = ref(projectsData)
 
 function copyEmail() {
   const email = 'aissam.lamjadab@gmail.com'
   navigator.clipboard.writeText(email).then(() => {
+    emailCopied.value = true
     setTimeout(() => {
       open.value = true
       // Fermer automatiquement après 3 secondes
       setTimeout(() => {
         open.value = false
-      }, 3000)
+        emailCopied.value = false
+      }, 4000)
     }, 100)
   })
 }
@@ -33,7 +36,7 @@ function copyEmail() {
 <template>
   <ToastProvider>
     <div
-      class="w-full max-w-[56rem] mx-auto px-4 sm:px-6 lg:px-8 sm:border-x border-gray-600/30 pt-10 min-h-svh pb-20"
+      class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 sm:border-x border-gray-600/30 pt-10 min-h-svh pb-20"
     >
       <Navbar />
       <Enter>
@@ -53,8 +56,9 @@ function copyEmail() {
           <Button
             :action="copyEmail"
             class="font-normal text-sm text-white tracking-wide bg-white/5 hover:bg-white/10 cursor-pointer transition-all duration-300 border border-white/10 hover:border-white/20"
-            >Contactez-moi</Button
-          >
+            >
+            {{ emailCopied ? 'Email copié ✓' : 'Contactez-moi' }}
+            </Button>
         </div>
       </Enter>
       <div class="flex flex-col gap-16">
