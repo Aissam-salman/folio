@@ -5,7 +5,7 @@
     "description": "Refonte totale du site vitrine avec blog, intégration API ATS, gestion de contenu moderne",
     "date": "2025",
     "tech": ["Next.js", "Strapi", "TypeScript", "API ATS"],
-    "link": "https://wiico-front.vercel.app",
+    "link": "https://wiico.fr",
     "image": "wiico.png"
   },
   {
