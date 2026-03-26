@@ -1,50 +1,80 @@
 @import 'tailwindcss';
 
-/* Animations personnalisées */
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
+@theme {
+  --color-brand-primary: #2563eb;
+  --color-brand-accent: #38bdf8;
+  --color-dark-surface: rgba(15, 23, 42, 0.6);
+  --color-dark-border: rgba(255, 255, 255, 0.08);
+}
+
+/* Animations personnalisées discrètes */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  50% {
-    background-position: 100% 50%;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-/* Scrollbar personnalisée - plus discrète */
+/* Scrollbar professionnelle */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #171717;
+  background: #0f172a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: #334155;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: #475569;
 }
 
-/* Amélioration des transitions globales */
 * {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Background animé pour le body - plus subtil */
+/* Background élégant */
 body {
-  background: linear-gradient(-45deg, #0a0a0a, #111111, #0d0d0d, #121212);
-  background-size: 400% 400%;
-  animation: gradient-shift 20s ease infinite;
+  background-color: #020617; /* Very dark slate */
+  color: #f8fafc;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Typography premium */
+.text-gradient-elegant {
+  background: linear-gradient(135deg, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-primary {
+  background: linear-gradient(135deg, #60a5fa, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.premium-panel {
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.premium-panel:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(30, 41, 59, 0.5);
 }

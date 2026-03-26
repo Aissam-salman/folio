@@ -10,17 +10,19 @@ interface Project {
 const { project } = defineProps<{ project: Project }>()
 </script>
 <template>
-  <a :href="project.link" target="_blank" class="group block h-full">
+  <a :href="project.link" target="_blank" class="group block h-full select-none cursor-pointer mt-4">
     <div
-      class="flex gap-3 flex-col p-5 border border-white/5 rounded-lg backdrop-blur-sm bg-white/2 hover:bg-white/4 transition-all duration-500 h-full hover:border-white/10"
+      class="relative flex gap-4 flex-col p-6 rounded-xl premium-panel h-full overflow-hidden hover:-translate-y-1"
     >
-      <div class="flex flex-row justify-between items-start">
-        <h3 class="text-base font-light group-hover:text-white transition-colors text-white/90">{{ project.title }}</h3>
-        <span class="text-xs text-gray-500 font-normal uppercase tracking-wider">{{ project.date }}</span>
+      <div class="flex flex-row justify-between items-start pt-2">
+        <h3 class="text-xl font-medium group-hover:text-blue-400 transition-colors text-white min-h-14">{{ project.title }}</h3>
+        <span class="text-[10px] text-slate-400 font-medium bg-slate-800/50 px-2 py-1 rounded uppercase tracking-widest border border-slate-700 group-hover:border-slate-500 transition-colors">{{ project.date }}</span>
       </div>
-      <span class="font-light text-gray-400 leading-relaxed text-sm">{{ project.description }}</span>
-      <div class="flex gap-2 flex-wrap mt-auto">
-        <div v-for="tech in project.tech" :key="tech" class="rounded-md bg-white/3 border border-white/10 px-2.5 py-0.5 text-xs font-normal text-gray-400 hover:bg-white/6 hover:text-gray-300 transition-all">
+      <p class="font-light text-slate-400 leading-relaxed text-sm group-hover:text-slate-300 transition-colors line-clamp-3">{{ project.description }}</p>
+
+      <div class="flex gap-2 flex-wrap mt-auto pt-4 border-t border-slate-800/50">
+        <div v-for="tech in project.tech" :key="tech"
+             class="rounded border border-slate-700/50 px-2 py-1 text-xs font-medium text-slate-400 transition-all duration-300">
           {{ tech }}
         </div>
       </div>

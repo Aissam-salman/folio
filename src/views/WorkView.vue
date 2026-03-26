@@ -36,48 +36,51 @@ function copyEmail() {
 <template>
   <ToastProvider>
     <div
-      class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 sm:border-x border-gray-600/30 pt-10 min-h-svh pb-20"
+      class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 border-x border-white/5 pt-10 min-h-svh pb-20 relative z-0"
     >
       <Navbar />
       <Enter>
-        <h1 class="text-3xl text-white font-light my-10 tracking-tight">Projets récents</h1>
+        <div class="flex items-center gap-4 mt-8 mb-6">
+          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white">
+            Projets & Réalisations
+          </h1>
+          <div class="h-[1px] flex-1 bg-gradient-to-r from-slate-700 to-transparent ml-4 hidden sm:block"></div>
+        </div>
       </Enter>
       <Enter>
-        <p class="mb-5 text-gray-400 leading-relaxed text-sm">
-          Développeur Fullstack avec plus de 3 ans d'expérience en développement, spécialisé dans la
-          conception et la réalisation de solutions informatiques fiables. Expertise en
-          <span class="text-white/70">Spring Boot</span>,
-          <span class="text-white/70">Laravel</span>, <span class="text-white/70">Django</span>,
-          <span class="text-white/70">React</span> et <span class="text-white/70">Next.js</span>.
+        <p class="mb-8 text-slate-300 leading-relaxed text-lg border-l-2 border-blue-500 pl-6 py-2 premium-panel rounded-r-lg bg-slate-900/40 p-8">
+          Je conçois et développe des <span class="text-white font-medium">applications web sur-mesure</span> pour répondre concrètement à vos enjeux métiers.
+          Mon approche est centrée sur le résultat : <span class="text-blue-400 font-medium">simplifier vos processus</span>,
+          accélérer votre croissance et garantir une <span class="text-blue-400 font-medium">expérience utilisateur fluide et mémorable</span> pour vos clients.
         </p>
       </Enter>
       <Enter>
-        <div class="flex gap-2 mb-20">
+        <div class="flex gap-4 mb-16">
           <Button
             :action="copyEmail"
-            class="font-normal text-sm text-white tracking-wide bg-white/5 hover:bg-white/10 cursor-pointer transition-all duration-300 border border-white/10 hover:border-white/20"
+            class="font-medium text-sm text-white tracking-widest uppercase bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded cursor-pointer transition-all duration-300 border border-blue-500 shadow-[0_4px_14px_0_rgb(37,99,235,0.39)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.23)]"
             >
-            {{ emailCopied ? 'Email copié ✓' : 'Contactez-moi' }}
+            {{ emailCopied ? '📧 Email copié ✓' : '👋 Contactez-moi' }}
             </Button>
         </div>
       </Enter>
-      <div class="flex flex-col gap-16">
-        <div v-for="proj in projects" :key="proj.id">
-          <Enter>
+      <div class="flex flex-col gap-12 sm:gap-16">
+        <div v-for="(proj, index) in projects" :key="proj.id">
+          <Enter :delay="index * 0.1">
             <div
-              class="flex flex-col md:flex-row gap-6 p-6 rounded-lg backdrop-blur-sm bg-white/2 hover:bg-white/4 border border-white/5 hover:border-white/10 transition-all duration-500"
+              class="group relative flex flex-col md:flex-row gap-8 p-8 rounded-xl premium-panel hover:-translate-y-1 transition-all duration-500 overflow-hidden"
             >
-              <div class="flex-1">
-                <div class="text-gray-500 text-xs font-medium mb-3 uppercase tracking-wider">
+              <div class="flex-1 z-10">
+                <div class="inline-block px-2 py-1 bg-slate-800 rounded text-slate-300 text-xs font-semibold mb-4 uppercase tracking-widest border border-slate-700">
                   {{ proj.date }}
                 </div>
-                <h2 class="font-light text-xl mb-3 text-white tracking-tight">{{ proj.title }}</h2>
-                <p class="text-gray-400 mb-4 leading-relaxed text-sm">{{ proj.description }}</p>
-                <div class="flex gap-2 flex-wrap mb-4">
+                <h2 class="font-medium text-3xl mb-4 text-white tracking-tight group-hover:text-blue-400 transition-colors">{{ proj.title }}</h2>
+                <p class="text-slate-400 mb-6 leading-relaxed text-base font-light">{{ proj.description }}</p>
+                <div class="flex gap-2 flex-wrap mb-6">
                   <div
                     v-for="tech in proj.tech"
                     :key="tech"
-                    class="rounded-md bg-white/3 border border-white/10 px-2.5 py-1 text-xs font-normal text-gray-400 hover:bg-white/6 hover:text-gray-300 transition-all"
+                    class="rounded border border-slate-700/50 px-2.5 py-1 text-xs font-medium text-slate-400 transition-all duration-300"
                   >
                     {{ tech }}
                   </div>
@@ -85,11 +88,11 @@ function copyEmail() {
                 <a
                   :href="proj.link"
                   target="_blank"
-                  class="inline-flex items-center gap-1.5 text-gray-400 hover:text-white text-xs font-normal transition-colors group uppercase tracking-wider"
+                  class="inline-flex items-center gap-2 text-white bg-slate-800 hover:bg-slate-700 px-5 py-2.5 rounded text-xs font-medium transition-all group/btn uppercase tracking-widest border border-slate-600"
                 >
                   Voir le projet
                   <svg
-                    class="w-3 h-3 transform group-hover:translate-x-0.5 transition-transform"
+                    class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform text-blue-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -104,12 +107,14 @@ function copyEmail() {
                 </a>
               </div>
               <div
-                class="md:w-96 h-64 overflow-hidden rounded-lg flex items-center justify-center bg-white/2 border border-white/5 transition-all"
+                class="md:w-[45%] h-64 sm:h-auto min-h-[250px] overflow-hidden rounded-lg flex items-center justify-center border border-slate-700/50 transition-all relative"
               >
+                <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                <!-- Optional: Image logic for proj.image can be updated to be responsive and cover -->
                 <img
                   :src="proj.image"
                   :alt="`Illustration du projet ${proj.title}`"
-                  class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
+                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
             </div>

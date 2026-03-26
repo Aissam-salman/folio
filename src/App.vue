@@ -4,13 +4,16 @@ import { SpeedInsights } from "@vercel/speed-insights/vue"
 </script>
 
 <template>
-  <div class="min-h-screen relative overflow-x-hidden">
-    <!-- Background gradient animé - plus subtil -->
-    <div class="fixed inset-0 -z-10">
-      <div class="absolute inset-0 bg-[#0a0a0a]"></div>
-      <div class="absolute top-0 left-1/4 w-96 h-96 bg-white/1 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-white/1rounded-full blur-3xl"></div>
+  <div class="min-h-screen relative overflow-x-hidden selection:bg-blue-500/30">
+    <!-- Corporate / Elegant Background -->
+    <div class="fixed inset-0 -z-10 bg-[#020617]">
+      <!-- Subtle top light -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[50vh] bg-blue-900/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+      <!-- Subtle grid overlay -->
+      <div class="absolute inset-0 opacity-30 pointer-events-none" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDM5LjVoNDBWNDBoLTQweiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAyKSIvPjxwYXRoIGQ9Ik0zOS41IDB2NDBoLjVWbHoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMikiLz48L3N2Zz4=')"></div>
     </div>
+
     <SpeedInsights />
     <RouterView />
   </div>

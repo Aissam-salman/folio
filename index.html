@@ -6,6 +6,14 @@
   <link rel="icon" href="/logos1.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BySalman</title>
+  <script>
+    window.addEventListener('error', function(e) {
+      document.body.innerHTML += '<div style="color:red;z-index:9999;position:fixed;top:0;left:0;background:black;padding:20px;font-size:24px;">' + e.message + '<br>' + e.filename + ':' + e.lineno + '</div>';
+    });
+    window.addEventListener('unhandledrejection', function(e) {
+      document.body.innerHTML += '<div style="color:red;z-index:9999;position:fixed;top:0;left:0;background:black;padding:20px;font-size:24px;">Unhandled Promise: ' + e.reason + '</div>';
+    });
+  </script>
 </head>
 
 <body>
