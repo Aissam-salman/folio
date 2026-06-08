@@ -23,7 +23,6 @@ function copyEmail() {
     emailCopied.value = true
     setTimeout(() => {
       open.value = true
-      // Fermer automatiquement après 3 secondes
       setTimeout(() => {
         open.value = false
         emailCopied.value = false
@@ -49,9 +48,7 @@ function copyEmail() {
       </Enter>
       <Enter>
         <p class="mb-8 text-slate-300 leading-relaxed text-lg border-l-2 border-blue-500 pl-6 py-2 premium-panel rounded-r-lg bg-slate-900/40 p-8">
-          Je conçois et développe des <span class="text-white font-medium">applications web sur-mesure</span> pour répondre concrètement à vos enjeux métiers.
-          Mon approche est centrée sur le résultat : <span class="text-blue-400 font-medium">simplifier vos processus</span>,
-          accélérer votre croissance et garantir une <span class="text-blue-400 font-medium">expérience utilisateur fluide et mémorable</span> pour vos clients.
+          Je conçois et développe des applications web et e-commerce sur-mesure. Mon approche&nbsp;: comprendre le vrai problème, recommander la bonne solution, et livrer un produit rapide, fiable et simple à maintenir.
         </p>
       </Enter>
       <Enter>
@@ -86,6 +83,7 @@ function copyEmail() {
                   </div>
                 </div>
                 <a
+                  v-if="proj.link"
                   :href="proj.link"
                   target="_blank"
                   class="inline-flex items-center gap-2 text-white bg-slate-800 hover:bg-slate-700 px-5 py-2.5 rounded text-xs font-medium transition-all group/btn uppercase tracking-widest border border-slate-600"
@@ -107,10 +105,10 @@ function copyEmail() {
                 </a>
               </div>
               <div
+                v-if="proj.image"
                 class="md:w-[45%] h-64 sm:h-auto min-h-[250px] overflow-hidden rounded-lg flex items-center justify-center border border-slate-700/50 transition-all relative"
               >
                 <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-                <!-- Optional: Image logic for proj.image can be updated to be responsive and cover -->
                 <img
                   :src="proj.image"
                   :alt="`Illustration du projet ${proj.title}`"

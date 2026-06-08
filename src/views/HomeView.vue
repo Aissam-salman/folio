@@ -15,16 +15,14 @@ import Projects from '@/components/Projects.vue'
         <div class="text-center mt-8 mb-4 relative w-full border-b border-slate-800/60 pb-16">
           <div class="inline-block mb-8 relative z-10">
             <span class="px-5 py-2 rounded-full border border-slate-700 bg-slate-900/50 text-xs font-medium tracking-widest text-slate-300 uppercase">
-              Consultant & Développeur Web
+              Full Stack Developer — React / Next.js
             </span>
           </div>
           <h1 class="font-bold text-5xl sm:text-7xl mb-8 tracking-tighter relative z-10 text-white">
             Aissam Salman
           </h1>
-          <p class="flex flex-col mt-6 text-slate-400 leading-relaxed max-w-2xl mx-auto text-lg relative z-10 font-light">
-            <span>Issu de <span class="font-medium text-slate-200">L'École 42</span>, j'accompagne les entreprises</span>
-            <span>dans la conception de solutions web <span class="text-slate-200 font-medium">fiables</span> et <span class="text-slate-200 font-medium">performantes</span>.</span>
-            <span>Mon objectif : transformer vos enjeux complexes en outils simples et efficaces.</span>
+          <p class="mt-6 text-slate-400 leading-relaxed max-w-xl mx-auto text-lg relative z-10 font-light">
+            Développeur Full Stack spécialisé React&nbsp;/&nbsp;Next.js, j'aide les startups et PME à concevoir et livrer des solutions web et e-commerce sur-mesure — du cahier des charges à la mise en production. Actuellement en formation intensive à l'École&nbsp;42.
           </p>
         </div>
 
